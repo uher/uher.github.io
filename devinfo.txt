@@ -1,0 +1,11 @@
+
+
+
+// Google Cloud Patform
+Project ID
+testbuzzmusiq
+Project number
+725474612273
+
+API Keys
+Browser key: AIzaSyAq6KXhw-ktfX8CrKguH07hqPFbbHwnm_I
