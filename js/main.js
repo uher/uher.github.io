@@ -56,7 +56,7 @@ if ('serviceWorker' in navigator) {
         
         var err = d.getElementById('error');
 
-        err.innerText = "error in registing service worker. error msg:\n" + err;
+        err.innerText = "error in registing service worker. error msg:\n" + err.innerHTML;
     });
 } else {
     err.innerText = "Not supported Service worker";
