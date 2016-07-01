@@ -60,7 +60,8 @@ self.addEventListener('notificationclick', function(event) {
 
     event.notification.close();
     // var url = 'https://youtu.be/gYMkEMCHtJ4';
-    var url = "https://open.spotify.com/user/gukhyeon/playlist/5obyUkls1V8moSCbd7SgxQ#Intent;scheme=http;package=com.spotify.music;end"
+    // var url = "https://open.spotify.com/user/gukhyeon/playlist/5obyUkls1V8moSCbd7SgxQ#Intent;scheme=http;package=com.spotify.music;end";
+    var url = "intent://spotify:user:gukhyeon:playlist:5obyUkls1V8moSCbd7SgxQ";
     event.waitUntil(
         clients.matchAll({
             type: 'window'
