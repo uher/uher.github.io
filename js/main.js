@@ -62,15 +62,6 @@ if ('serviceWorker' in navigator) {
     err.innerText = "Not supported Service worker";
 }
 
-function ClipBoard_() {
-
-    var t = d.getElementById('token');
-    
-    Copied = t.createTextRange();
-    console.log("coped: " + Copied);
-    Copied.execCommand("Copy");
-}
-
 function copyToClipboard(element) {
   var $temp = $("<input>");
   $("body").append($temp);
