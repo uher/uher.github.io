@@ -60,7 +60,7 @@ self.addEventListener('notificationclick', function(event) {
 
     event.notification.close();
     // var url = 'https://youtu.be/gYMkEMCHtJ4';
-    var url = "intent://scan/#Intent;scheme=spotify:user:spotify:playlist:1SvdCw4FMhqxo7dj8uYNxb;action:android.media.action.MEDIA_PLAY_FROM_SEARCH;S.browser_fallback_url=http%3A%2F%2Fzxing.org;end";
+    var url = "intent:#Intent;scheme=spotify:user:spotify:playlist:1SvdCw4FMhqxo7dj8uYNxb;action:android.media.action.MEDIA_PLAY_FROM_SEARCH;S.browser_fallback_url=http%3A%2F%2Fzxing.org;end";
 
     event.waitUntil(
         clients.matchAll({

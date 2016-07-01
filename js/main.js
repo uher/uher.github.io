@@ -51,12 +51,12 @@ if ('serviceWorker' in navigator) {
 
         });
 
-    }).catch(function(err) {
-        console.log(':^(', err);
+    }).catch(function(error) {
+        console.log(':^(', error);
         
         var err = d.getElementById('error');
 
-        err.innerText = "error in registing service worker. error msg:\n" + err.innerHTML;
+        err.innerText = "error in registing service worker. error msg:\n" + error.innerHTML;
     });
 } else {
     err.innerText = "Not supported Service worker";
