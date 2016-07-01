@@ -61,7 +61,17 @@ self.addEventListener('notificationclick', function(event) {
     event.notification.close();
     // var url = 'https://youtu.be/gYMkEMCHtJ4';
     // var url = "https://open.spotify.com/user/gukhyeon/playlist/5obyUkls1V8moSCbd7SgxQ#Intent;scheme=http;package=com.spotify.music;end";
-    var url = "intent://spotify:user:gukhyeon:playlist:5obyUkls1V8moSCbd7SgxQ";
+
+
+    // working
+    // var url = "intent://spotify:user:gukhyeon:playlist:5obyUkls1V8moSCbd7SgxQ";
+
+    var url = "https://uher.github.io/index2";
+
+    // not working   
+    // android-app://{package_id}[/{scheme}[/{host}[/{path}]]][#Intent;{...}]
+    // var uri = "android-app://com.spotify.music/https://open.spotify.com/user/gukhyeon/playlist/5obyUkls1V8moSCbd7SgxQ"
+    // var uri = "android-app://com.spotify.music/https://open.spotify.com/user/gukhyeon/playlist/5obyUkls1V8moSCbd7SgxQ#Intent;action=com.example.MY_ACTION;end"
     event.waitUntil(
         clients.matchAll({
             type: 'window'
