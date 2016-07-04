@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>KAKAO share test</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="refresh" content="0; URL='intent://open.spotify.com/user/gukhyeon/playlist/5obyUkls1V8moSCbd7SgxQ#Intent;scheme=http;package=com.spotify.music;end'" />
+  <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+
+</head>
+
+<body>
+  <h1>
+    kakao share test
+    </h1>
+
+    <a id="kakao-link-btn" href="javascript:;">
+<img src="http://dn.api1.kage.kakao.co.kr/14/dn/btqa9B90G1b/GESkkYjKCwJdYOkLvIBKZ0/o.jpg"/>
+</a>
+<script type='text/javascript'>
+  Kakao.init('523835aa70290c038c768b870eaf7866');
+  
+  Kakao.Link.createTalkLinkButton({
+      container: '#kakao-link-btn',
+      label: '카카오링크 샘플에 오신 것을 환영합니다.',
+      image: {
+        src: 'https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/electronic.gif',
+        width: '300',
+        height: '200'
+      },
+      webButton: {
+        text: 'Buzz Musiq',
+        url: 'http://buzzmusiqtaste.us-west-2.elasticbeanstalk.com' // 앱 설정의 웹 플랫폼에 등록한 도메인의 URL이어야 합니다.
+      }
+    });
+</script>
+
+    <img width="100%" src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/electronic.gif" type="image/gif">
+    </img>
+
+</body>
+</html>
