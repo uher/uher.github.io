@@ -45,6 +45,22 @@
       xfbml      : true,
       version    : 'v2.6'
     });
+
+          FB.ui({
+  method: 'send',
+  link: 'http://www.nytimes.com/interactive/2015/04/15/travel/europe-favorite-streets.html',
+});
+
+
+ FB.ui(
+ {
+  method: 'share',
+  href: 'https://developers.facebook.com/docs/'
+}, function(response){
+
+  console.log(response);
+});
+
   };
 
   (function(d, s, id){
@@ -56,26 +72,6 @@
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 </script>
-    
-    <script>
-      FB.ui({
-  method: 'send',
-  link: 'http://www.nytimes.com/interactive/2015/04/15/travel/europe-favorite-streets.html',
-});
-
-
-      </script>
-
-      <script>
-        FB.ui(
- {
-  method: 'share',
-  href: 'https://developers.facebook.com/docs/'
-}, function(response){
-
-  console.log(response);
-});
-        </script>
 
 </body>
 </html>
