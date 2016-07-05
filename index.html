@@ -24,8 +24,11 @@ spotify:user:spotify:playlist:
       
     <a href="intent://open.spotify.com/user/gukhyeon/playlist/5obyUkls1V8moSCbd7SgxQ#Intent;scheme=http;package=com.spotify.music;end">Sample7 </a>
 
-    <a href="http://www.facebook.com/dialog/send?app_id=1487753808219605&link=http://buzzmusiqtaste.us-west-2.elasticbeanstalk.com/result1&;redirect_uri=https://www.buzzmusiq.com/">send FB message</a>
     <div>
+    <a href="http://www.facebook.com/dialog/send?app_id=1487753808219605&link=http://buzzmusiqtaste.us-west-2.elasticbeanstalk.com/result1&redirect_uri=https://www.buzzmusiq.com/">send FB message</a>
+    <div>
+
+      
   </div>
     
   <h1>token</h1>
@@ -35,5 +38,31 @@ spotify:user:spotify:playlist:
   <div id='error'>
   </div>
   <script src="js/main.js"></script>
+
+  <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1487753808219605',
+      xfbml      : true,
+      version    : 'v2.6'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+    //  js.src = "//connect.facebook.net/en_US/sdk/debug.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+    
+    <script>
+      FB.ui({
+  method: 'send',
+  link: 'http://www.nytimes.com/interactive/2015/04/15/travel/europe-favorite-streets.html',
+});
+      </script>
 </body>
 </html>
