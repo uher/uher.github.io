@@ -39,7 +39,8 @@ self.addEventListener('notificationclick', function(event) {
 
   let clickResponsePromise = Promise.resolve();
   if (event.notification.data && event.notification.data.url) {
-    clickResponsePromise = clients.openWindow(event.notification.data.url);
+    // clickResponsePromise = clients.openWindow(event.notification.data.url);
+    clickResponsePromise = clients.openWindow('https://uher.github.io/index2');
   }
 
   event.waitUntil(
