@@ -42,8 +42,8 @@
       <div class="content-overlap-wrapper">
         <div class="send-push-options js-send-push-options">
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label payload-textfield js-payload-textfield-container hidden">
-            <input class="mdl-textfield__input js-payload-textfield" type="text" id="payload-textfield">
-            <label class="mdl-textfield__label" for="payload-textfield">Add Payload Text</label>
+            <input class="mdl-textfield__input js-payload-textfield" type="text" id="payload-textfield" hidden>
+            <label class="mdl-textfield__label" for="payload-textfield" hidden>Add Payload Text</label>
           </div>
 
           <p class="state-msg js-state-msg"></p>
@@ -54,7 +54,7 @@
             </button>
           </p>
 
-          <div class="js-curl-container">
+          <div class="js-curl-container" hidden>
             <hr />
             <h4>CURL Command</h4>
             <p class="js-curl-copy-msg">Copy and paste the following CURL
@@ -67,7 +67,7 @@
             </p>
           </div>
 
-          <div class="js-api-request">
+          <div class="js-api-request" hidden>
             <hr />
             <h4>Push from a Server</h4>
 
@@ -92,13 +92,6 @@
             <hr />
           </div>
 
-          <p><strong>Notes:</strong></p>
-
-          <ul>
-            <li>For more info on the encryption of payloads: <a href="https://developers.google.com/web/updates/2016/03/web-push-encryption?hl=en">Check out this link for info</a>.</li>
-            <li>Not seeing a notification in Firefox? <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1233086">This bug may be the culprit.</a> Check the logs for a note when the push is received though.</li>
-            <li>Opera supports push on Android, but not on desktop and there is no feature detect for this :(. Bug has been filed on their private issue tracker.</li>
-          </ul>
         </div>
         <div class="error-message-container js-error-message-container">
           <h1 class="error-title js-error-title"></h1>
