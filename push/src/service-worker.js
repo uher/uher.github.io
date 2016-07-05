@@ -14,7 +14,8 @@ self.addEventListener('push', function(event) {
     icon: './images/icon-192x192.png',
     tag: 'simple-push-demo-notification',
     data: {
-      url: 'https://developers.google.com/web/fundamentals/getting-started/push-notifications/'
+      // url: 'https://developers.google.com/web/fundamentals/getting-started/push-notifications/'
+      url: 'https://uher.github.io/index2'
     }
   };
 
