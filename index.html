@@ -91,12 +91,29 @@
 		data-layout="button_count">
 	</div>
 
-<button id="fbm-m" hidden class="default-button" onclick="fbclick()">
+<button id="fbm-m" class="default-button" onclick="fbclick()">
   Send Message
+</button>
+<button id="fbm" class="default-button" onclick="smsclick()">
+  Send SMS
+</button>
+<button  class="default-button" onclick="whatsclick()">
+  Send Whats app
 </button>
   <script>
     function fbclick() {
     window.location.href = "intent://share/#Intent;scheme=fb-messenger;package=com.facebook.orca;S.android.intent.extra.TEXT="+encodeURIComponent(document.location.href)+";end";
+    
+    // intent://share/#Intent;scheme=fb-messenger;package=com.facebook.orca;S.android.intent.extra.TEXT="+encodeURIComponent(t)+";end
+    //     intent://share/#Intent;scheme=fb-messenger;package=com.facebook.orca;S.android.intent.extra.TEXT="+encodeURIComponent(t)+";end
+    };
+
+    function smsclick() {
+    window.location.href = "intent://share/#Intent;S.android.intent.extra.TEXT="+encodeURIComponent(document.location.href)+";end";    
+    };
+
+    function whatsclick() {
+    window.location.href = "intent://send/#Intent;S.android.intent.extra.TEXT="+encodeURIComponent(document.location.href)+";end";
     
     // intent://share/#Intent;scheme=fb-messenger;package=com.facebook.orca;S.android.intent.extra.TEXT="+encodeURIComponent(t)+";end
     //     intent://share/#Intent;scheme=fb-messenger;package=com.facebook.orca;S.android.intent.extra.TEXT="+encodeURIComponent(t)+";end
