@@ -109,11 +109,11 @@
     };
 
     function smsclick() {
-    window.location.href = "intent://share/#Intent;S.android.intent.extra.TEXT="+encodeURIComponent(document.location.href)+";end";    
+    window.location.href = "intent://share/#Intent;action=android.intent.action.VIEW;S.android.intent.extra.TEXT="+encodeURIComponent(document.location.href)+";end";    
     };
 
     function whatsclick() {
-    window.location.href = "intent://send/#Intent;S.android.intent.extra.TEXT="+encodeURIComponent(document.location.href)+";end";
+    window.location.href = "intent:#Intent;action=Intent.ACTION_SEND;S.android.intent.extra.TEXT="+encodeURIComponent(document.location.href)+";end";
     
     // intent://share/#Intent;scheme=fb-messenger;package=com.facebook.orca;S.android.intent.extra.TEXT="+encodeURIComponent(t)+";end
     //     intent://share/#Intent;scheme=fb-messenger;package=com.facebook.orca;S.android.intent.extra.TEXT="+encodeURIComponent(t)+";end
