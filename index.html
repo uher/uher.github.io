@@ -12,6 +12,30 @@
 
 <body>
   
+
+  <script>
+
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '1487753808219605',
+        xfbml      : true,
+        version    : 'v2.6'
+      });
+
+    };
+
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) { return; }
+       js = d.createElement(s); js.id = id;
+       js.src = "//connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+  </script>
+
+
+
   <h1>Push Notification codelab</h1>
   <p>This page must be accessed using HTTPS or via localhost.</p>
   <script src="//cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.4.0/clipboard.min.js"></script>
@@ -38,16 +62,24 @@
   </div>
   <script src="js/main.js"></script>
 
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6&appId=1487753808219605";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6&appId=1487753808219605";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
 
-<div class="fb-comments" data-href="https://uher.github.io/" data-width="100%" data-numposts="5"></div>
+  <div class="fb-send-to-messenger" 
+    messenger_app_id="1487753808219605'" 
+    page_id="PAGE_ID" 
+    data-ref="https://uher.github.io/" 
+    color="blue" 
+    size="standard">
+  </div>    
+
+  <div class="fb-comments" data-href="https://uher.github.io/" data-width="100%" data-numposts="5"></div>
 
 </body>
 </html>
