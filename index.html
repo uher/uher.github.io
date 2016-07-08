@@ -79,6 +79,17 @@
   size="standard">
 </div>       
 
+<button class="default-button" onclick="fbclick()">
+
+  <script>
+    function fb() {
+    window.location.href = "intent://share/#Intent;scheme=fb-messenger;package=com.facebook.orca;S.android.intent.extra.TEXT="+encodeURIComponent(document.location.href)+";end";
+    
+    // intent://share/#Intent;scheme=fb-messenger;package=com.facebook.orca;S.android.intent.extra.TEXT="+encodeURIComponent(t)+";end
+    //     intent://share/#Intent;scheme=fb-messenger;package=com.facebook.orca;S.android.intent.extra.TEXT="+encodeURIComponent(t)+";end
+    };
+    </script>
+</button>
   <div class="fb-comments" data-href="https://uher.github.io/" data-width="100%" data-numposts="5"></div>
 
 </body>
