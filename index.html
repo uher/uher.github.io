@@ -113,7 +113,7 @@
     };
 
     function whatsclick() {
-    window.location.href = "intent:#Intent;action=Intent.ACTION_SEND;S.android.intent.extra.TEXT="+encodeURIComponent(document.location.href)+";end";
+    window.location.href = "intent://#Intent;action=Intent.ACTION_SEND;S.android.intent.extra.TEXT="+encodeURIComponent(document.location.href)+";end";
     
     // intent://share/#Intent;scheme=fb-messenger;package=com.facebook.orca;S.android.intent.extra.TEXT="+encodeURIComponent(t)+";end
     //     intent://share/#Intent;scheme=fb-messenger;package=com.facebook.orca;S.android.intent.extra.TEXT="+encodeURIComponent(t)+";end
