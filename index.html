@@ -73,12 +73,12 @@
 	}(document, 'script', 'facebook-jssdk'));</script>
 
 	<!-- Your send button code -->
-	<div class="fb-send" 
+	<div class="fb-send" id="fbm-d" 
 		data-href="http://www.naver.com/index.html" 
 		data-layout="button_count">
 	</div>
 
-<button class="default-button" onclick="fbclick()">
+<button id="fbm-m" class="default-button" onclick="fbclick()">
   Send Message
 </button>
   <script>
@@ -92,5 +92,17 @@
 
   <div class="fb-comments" data-href="https://uher.github.io/" data-width="100%" data-numposts="5"></div>
 
+  <script>
+    (function() {
+      if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+        // phone
+        $('#fbm-m').show();
+        $('#fbm-d').hide();
+      } else {
+        $('#fbm-m').hide();
+        $('#fbm-d').show();
+      }
+    })
+    </script>
 </body>
 </html>
