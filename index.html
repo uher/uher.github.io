@@ -96,11 +96,9 @@
     (function() {
       if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
         // phone
-        $('#fbm-m').show();
-        $('#fbm-d').hide();
+        $('#fbm-m').hidden = false;
       } else {
-        $('#fbm-m').hide();
-        $('#fbm-d').show();
+        $('#fbm-d').hidden = false;
       }
     })
     </script>
