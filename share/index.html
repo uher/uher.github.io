@@ -11,9 +11,9 @@
 
   <link rel="canonical" href="http://buzzmusiqtaste.us-west-2.elasticbeanstalk.com/result"/>
 
-  <meta property="article:tag" content="quiz">
+  <!--<meta property="article:tag" content="quiz">
   <meta property="article:author" content="['BuzzMusiq-1041188772583316', 'andy.her.71']">
-  <meta property="article:publisher" content="http://www.buzzmusiq.com/">
+  <meta property="article:publisher" content="http://www.buzzmusiq.com/">-->
 
   <meta property="fb:app_id" content="1487753808219605">
 
@@ -27,9 +27,10 @@
   <meta property="og:video:type" content="application/x-shockwave-flash">
   
   <meta property="og:image" content="https://s3-us-west-2.amazonaws.com/buzzmusiqdata/image00_cloudconvert_mjpeg.swf">
+<!--  
   <meta property="og:image:height" content="630">
   <meta property="og:image:width" content="1200">
-  <meta property="og:image:type" content="image/gif">
+  <meta property="og:image:type" content="image/gif">-->
 
 <link rel="manifest" href="manifest.json">
 </head>
@@ -100,60 +101,6 @@ document.getElementById('shareBtn').onclick = function() {
 }
 </script>
 
-	<!-- Your send button code -->
-	<div class="fb-send" hidden id="fbm-d" 
-		data-href="http://www.naver.com/index.html" 
-		data-layout="button_count">
-	</div>
-
-<button id="fbm-m" class="default-button" onclick="fbclick()">
-  Send Message
-</button>
-<button id="fbm" class="default-button" onclick="smsclick()">
-  Send SMS
-</button>
-<button  class="default-button" onclick="whatsclick()">
-  Send Whats app
-</button>
-
-<button id="fbm" class="default-button" onclick="ww()">
-  wwwww
-</button>
-<button  class="default-button" onclick="ss()">
-  ssssss
-</button>
-
-  <script>
-    function fbclick() {
-    window.location.href = "intent://share/#Intent;scheme=fb-messenger;package=com.facebook.orca;S.android.intent.extra.TEXT="+encodeURIComponent(document.location.href)+";end";
-    
-    // intent://share/#Intent;scheme=fb-messenger;package=com.facebook.orca;S.android.intent.extra.TEXT="+encodeURIComponent(t)+";end
-    //     intent://share/#Intent;scheme=fb-messenger;package=com.facebook.orca;S.android.intent.extra.TEXT="+encodeURIComponent(t)+";end
-    };
-
-    function smsclick() {
-    window.location.href = "intent://share/#Intent;scheme=http;action=android.intent.action.VIEW;S.android.intent.extra.TEXT="+encodeURIComponent(document.location.href)+";end";    
-    };
-
-    function whatsclick() {
-    window.location.href = "intent://smsto:12346556#Intent;scheme=http;action=Intent.ACTION_SEND;S.android.intent.extra.TEXT="+encodeURIComponent(document.location.href)+";end";
-    
-   };
-    
-    function ww() {
-    window.location.href = "intent://smsto:12346556#Intent;scheme=http;action=android.intent.action.VIEW;S.android.intent.extra.TEXT="+encodeURIComponent(document.location.href)+";end";
-    
-    // intent://share/#Intent;scheme=fb-messenger;package=com.facebook.orca;S.android.intent.extra.TEXT="+encodeURIComponent(t)+";end
-    //     intent://share/#Intent;scheme=fb-messenger;package=com.facebook.orca;S.android.intent.extra.TEXT="+encodeURIComponent(t)+";end
-    };
-
-    function ss() {
-    window.location.href = "intent://smsto:12346556#Intent;scheme=http;action=android.intent.action.VIEW;S.android.intent.extra.TEXT="+encodeURIComponent(document.location.href)+";end";
-    
-    // intent://share/#Intent;scheme=fb-messenger;package=com.facebook.orca;S.android.intent.extra.TEXT="+encodeURIComponent(t)+";end
-    //     intent://share/#Intent;scheme=fb-messenger;package=com.facebook.orca;S.android.intent.extra.TEXT="+encodeURIComponent(t)+";end
-    };
-    </script>
 
   <div class="fb-comments" data-href="https://uher.github.io/" data-width="100%" data-numposts="5"></div>
 
