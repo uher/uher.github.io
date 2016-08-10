@@ -1,0 +1,343 @@
+<?php
+header('Access-Control-Allow-Origin: *'); 
+header('Access-Control-Allow-Methods: GET, PUT, POST, DELETE, OPTIONS');
+?>
+
+
+  <!doctype html>
+  <html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="styles/inline.css">
+    <link rel="stylesheet" type="text/css" href="styles/app.css">
+
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-79003627-1', 'auto');
+    ga('send', 'pageview');
+
+    </script>
+
+    <script type="text/javascript" 
+src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js">
+</script>
+
+
+<script type="text/javascript" src="./jquery-simplyscroll-2.0.5/jquery.simplyscroll.js"></script>
+<link rel="stylesheet" href="./jquery-simplyscroll-2.0.5/jquery.simplyscroll.css" media="all" 
+type="text/css">
+
+    <script type="text/javascript">
+    (function($) {
+      $(function() { //on DOM ready 
+            $("#scroller").simplyScroll({speed: 10, frameRate:30});
+      });
+     })(jQuery);
+    </script>
+
+     <script type="text/javascript">
+    (function($) {
+      $(function() { //on DOM ready 
+            $("#scroller2").simplyScroll({speed: 4});
+      });
+     })(jQuery);
+    </script>
+
+    
+
+    <!-- Meta data for Share -->
+    <meta property="article:tag" content="quiz">
+
+    <meta property="article:author" content="['BuzzMusiq-1041188772583316', 'andy.her.71']">
+    <meta property="article:publisher" content="http://www.buzzmusiq.com/">
+    
+    <meta property="fb:app_id" content="1487753808219605">
+
+    <meta property="og:site_name" content="Buzz Musiq">
+    <meta property="og:title" content="What is my music taste">
+    <meta property="og:description" content="Analyze your music taste">
+    <meta property="og:image" content="_IMAGE_">
+    <meta property="og:image:height" content="630">
+    <meta property="og:type" content="article">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:type" content="image/jpeg">
+
+    <!--
+      <meta property="og:url" content="_URL_"> 
+    -->
+
+    <meta property="twitter:meta_title" content="What is my music taste">
+    <meta property="twitter:description" content="Analyze your music taste">
+    <meta property="twitter:image" content="_IMAGE_">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:image:height" content="630">
+    <meta property="twitter:image:width" content="1200">
+
+
+
+    <style>
+    
+     
+
+
+
+
+
+
+      /* Container DIV - automatically generated */
+.simply-scroll-container { 
+  position: relative;
+}
+
+/* Clip DIV - automatically generated */
+.simply-scroll-clip { 
+  position: relative;
+  overflow: hidden;
+}
+
+/* UL/OL/DIV - the element that simplyScroll is inited on
+Class name automatically added to element */
+.simply-scroll-list { 
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+  
+.simply-scroll-list li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+  
+.simply-scroll-list li img {
+  border: 10px, 10px, 10px, 10px;
+
+  display: block;
+}
+
+/* Custom class modifications - adds to / overrides above
+
+.simply-scroll is default base class */
+
+/* Container DIV */
+.simply-scroll { 
+  width: 2000;
+  height: 200px;
+  margin-bottom: 1em;
+}
+
+/* Clip DIV */
+.simply-scroll .simply-scroll-clip {
+  width: 2000;
+  height: 200px;
+}
+  
+/* Explicitly set height/width of each list item */ 
+.simply-scroll .simply-scroll-list li {
+  float: left; /* Horizontal scroll only */
+  width: 400px;
+  height: 210px;
+}
+
+
+    </style>
+
+  </head>
+
+  <title>
+    <H1>What type are you?</H1>
+  </title>
+
+  <body>
+
+    <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+
+
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6&appId=1487753808219605";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+    <header class="header">
+      <button class="headerButton" id="logo" ></button>
+        <!--Buzz Musiq-->
+      <h1 class="header__title">Buzzusiq</h1>
+    </header>
+    <main class="main">
+
+      <div class="bz-wrapper">
+
+      <!-- new login view -->
+      <div id="overlay" class="bz-layer-dim"></div> 
+
+      <div >
+      <ul id="scroller">
+          <li><img src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/thumb_resized_400_210/thumb00.png" width="400" height="210"></li>
+          <li><img src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/thumb_resized_400_210/thumb01.png" width="400" height="210"></li>
+          <li><img src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/thumb_resized_400_210/thumb02.png" width="400" height="210"></li>
+        
+          <li><img src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/thumb_resized_400_210/thumb04.png" width="400" height="210"></li>
+          <li><img src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/thumb_resized_400_210/thumb05.png" width="400" height="210"></li>
+          <li><img src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/thumb_resized_400_210/thumb06.png" width="400" height="210"></li>
+      </ul>   
+
+
+      <ul id="scroller2">
+          <li><img src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/thumb_resized_400_210/thumb00.png" width="400" height="210"></li>
+          <li><img src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/thumb_resized_400_210/thumb01.png" width="400" height="210"></li>
+          <li><img src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/thumb_resized_400_210/thumb02.png" width="400" height="210"></li>
+        
+          <li><img src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/thumb_resized_400_210/thumb04.png" width="400" height="210"></li>
+          <li><img src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/thumb_resized_400_210/thumb05.png" width="400" height="210"></li>
+          <li><img src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/thumb_resized_400_210/thumb06.png" width="400" height="210"></li>
+      </ul> 
+    </div>
+
+      <!-- <div id="horizontal-scroll">
+        <div>
+            <img src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/thumb_resized_400_210/thumb00.png">
+            <img src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/thumb_resized_400_210/thumb01.png">
+            <img src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/thumb_resized_400_210/thumb02.png">
+            <img src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/thumb_resized_400_210/thumb03.png">
+          </div>
+          <div>
+            <img src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/thumb_resized_400_210/thumb04.png">
+            <img src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/thumb_resized_400_210/thumb05.png">
+            <img src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/thumb_resized_400_210/thumb06.png">
+            <img src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/thumb_resized_400_210/thumb08.png">
+          </div>
+        
+      </div> -->
+
+      <!-- <marquee id="flow-block" class="flow-block" direction="right" behavior="alternate" scrollamount="10">
+    
+           <div class="col">
+            <img class="flow-img" src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/thumb_resized_400_210/thumb00.png">
+            <img class="flow-img" src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/thumb_resized_400_210/thumb01.png">
+            <img class="flow-img" src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/thumb_resized_400_210/thumb02.png">
+            <img class="flow-img" src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/thumb_resized_400_210/thumb03.png">
+            <img class="flow-img" src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/thumb_resized_400_210/thumb04.png">
+            <img class="flow-img" src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/thumb_resized_400_210/thumb05.png">
+            <img class="flow-img" src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/thumb_resized_400_210/thumb06.png">
+            <img class="flow-img" src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/thumb_resized_400_210/thumb08.png">
+          </div>
+          <div class="col">
+            <img class="flow-img" src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/thumb_resized_400_210/thumb10.png">
+            <img class="flow-img" src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/thumb_resized_400_210/thumb11.png">
+            <img class="flow-img" src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/thumb_resized_400_210/thumb12.png">
+            <img class="flow-img" src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/thumb_resized_400_210/thumb13.png">
+            <img class="flow-img" src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/thumb_resized_400_210/thumb14.png">
+            <img class="flow-img" src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/thumb_resized_400_210/thumb15.png">
+            <img class="flow-img" src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/thumb_resized_400_210/thumb16.png">
+            <img class="flow-img" src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/thumb_resized_400_210/thumb18.png">
+          </div>
+       </marquee> -->
+
+        <div class="top-layer">
+
+          <div id="login-layer" class="login-layer">
+            <h3 style="color: white; align-text: center;">What type are you?</h3>
+            <input id="btnLogin" type="button" value="Log in with Spotify" class="login-button"></input>
+          </div>
+
+          <div id='loader' class="loader" hidden>
+             <svg viewBox="0 0 32 32" width="32" height="32">
+               <circle id="spinner" cx="16" cy="16" r="14" fill="none"></circle>
+             </svg>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="bz-snslayer">
+        <div class="bz-sharelayer"></div>
+        <div class="fb-comments" data-href="http://buzzmusiqtaste.us-west-2.elasticbeanstalk.com/" data-width="100%" data-numposts="10"></div>
+      
+      </div>
+      <!-- result view -->
+      <div id="result">
+
+      </div>
+
+      <!--<canvas width="1200" height="630" style="display:none">       
+      </canvas>
+      <div id="svg"></div>-->
+
+
+    </main>
+    <!-- processing view -->
+
+    <div class="dialog-container">
+    </div>
+
+    <script src="index.js"></script>
+
+  </body>
+
+  </html>
+
+
+
+
+  <!--  Backup!!!
+
+          <div class="col">
+          <img class="flow-img" src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/image00.gif">
+          <img class="flow-img" src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/image01.gif">
+          <img class="flow-img" src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/image02.gif">
+          <img class="flow-img" src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/image03.gif">
+          <img class="flow-img" src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/image04.gif">
+          <img class="flow-img" src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/image05.gif">
+          <img class="flow-img" src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/image06.gif">
+          <img class="flow-img" src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/image08.gif">
+        </div>
+        <div class="col">
+          <img class="flow-img" src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/image10.gif">
+          <img class="flow-img" src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/image11.gif">
+          <img class="flow-img" src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/image12.gif">
+          <img class="flow-img" src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/image13.gif">
+          <img class="flow-img" src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/image14.gif">
+          <img class="flow-img" src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/image15.gif">
+          <img class="flow-img" src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/image16.gif">
+          <img class="flow-img" src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/image18.gif">
+        </div>
+
+
+
+          <div class="col">
+            <img class="flow-img" src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/thumb00.png">
+            <img class="flow-img" src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/thumb01.png">
+            <img class="flow-img" src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/thumb02.png">
+            <img class="flow-img" src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/thumb03.png">
+            <img class="flow-img" src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/thumb04.png">
+            <img class="flow-img" src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/thumb05.png">
+            <img class="flow-img" src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/thumb06.png">
+            <img class="flow-img" src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/thumb08.png">
+          </div>
+          <div class="col">
+            <img class="flow-img" src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/thumb10.png">
+            <img class="flow-img" src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/thumb11.png">
+            <img class="flow-img" src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/thumb12.png">
+            <img class="flow-img" src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/thumb13.png">
+            <img class="flow-img" src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/thumb14.png">
+            <img class="flow-img" src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/thumb15.png">
+            <img class="flow-img" src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/thumb16.png">
+            <img class="flow-img" src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/thumb18.png">
+          </div>
+        </div>-->
