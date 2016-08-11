@@ -111,8 +111,11 @@
 <script>
 document.getElementById('shareBtn').onclick = function() {
   FB.ui({
-    method: 'share',
-  }, function(response){});
+        method: 'share',
+        display: 'popup',
+        message: 'auto.... url' + window.location.href, 
+        href: window.location.href,
+    }, function(response){});
 }
 </script>
 
