@@ -1,15 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
 
-<?php
-header('Access-Control-Allow-Origin: *'); 
-header('Access-Control-Allow-Methods: GET, PUT, POST, DELETE, OPTIONS');
-?>
+  <title>Push Notification codelab</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
-  <!doctype html>
-  <html>
-
-  <head>
-    <title>What are you like?</title>
+  <title>What are you like?</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -39,146 +37,103 @@ header('Access-Control-Allow-Methods: GET, PUT, POST, DELETE, OPTIONS');
     <meta property="og:video:url" content="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/image16_400x210.swf">
     <meta property="og:video:secure_url" content="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/image16_400x210.swf">
     <meta property="og:video:type" content="application/x-shockwave-flash">
-    <meta property="og:video:width" content="400">
-    <meta property="og:video:height" content="210">
+    <meta property="og:video:width" content="1200">
+    <meta property="og:video:height" content="630">
 
     <meta property="twitter:meta_title" content="Andy Her's musical taste is hard to define.">
     <meta property="twitter:description" content="What type of person are you? Let me guess from what you listen to.">
     <meta property="twitter:image" content="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/image16.gif">
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:image:height" content="630">
-    <meta property="twitter:image:width" content="1200">
+    <meta property="twitter:image:height" content="210">
+    <meta property="twitter:image:width" content="400">
 
-    <link rel="stylesheet" type="text/css" href="../styles/inline.css">
-    <link rel="stylesheet" type="text/css" href="../styles/app.css">
+<link rel="manifest" href="manifest.json">
+</head>
 
-    <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+<body>
+  
 
-    ga('create', 'UA-79003627-1', 'auto');
-    ga('send', 'pageview');
+  <script>
 
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '1487753808219605',
+        xfbml      : true,
+        version    : 'v2.6'
+      });
+
+    };
+
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) { return; }
+       js = d.createElement(s); js.id = id;
+       js.src = "//connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+  </script>
+
+<script>
+    (function() {
+      console.log('this is run...');
+
+      if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+        $('#fbm-m').hidden = false;
+        $('#fbm-d').hidden = true;
+      } else {
+        $('#fbm-m').hidden = true;
+        $('#fbm-d').hidden = false;
+      }
+    })
     </script>
 
-  </head>
 
-  <title>
-    <H1>Analyze your music taste</H1>
-  </title>
-
-
-  <body>
-
-    <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
-
-    <div id="fb-root"></div>
-    <script>(function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6&appId=1487753808219605";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
-
-
-    <header class="header">
-      <button class="headerButton" id="logo" value="Buzz Musiq">Buzz Musiq</button>
-      
-      <h1 class="header__title">        </h1>
-
-      <!--<button class="userProfileImage"></button>-->
-      <button class="headerButton" id="userProfileImage" disabled></button>
-    </header>
-
-
-    <main class="main">
-     
-      <!--Result IMG-->
-      <div class="bz-wrapper-result">
-
-        <div id="overlay" class="bz-layer-dim"></div> 
-
-        <div class="top-layer">
-            <div class="result-layer">
-              <img class='result-img' src="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/image16.gif">
-            </div>
-        </div>
-      </div>
-
-      
-      <div class="bz-snslayer">
-
-        <div class="bz-sharelayer">
+  <h1>Share Test</h1>
+  
+  <div class="container">    
+    <div class="fb-share-button"  data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Share</a></div>
  
-          <center>
-            <input id="btn-share-facebook" type="button" value="Share on Facebook" class="facebook-button"></input>
-            <input id="btn-share-others" type="button" class="share-others"></input>
-            
-          </center>
-        </div>
+  </div>
+    
+    <div id="shareBtn" class="btn btn-success clearfix">Share</div>
+
+  <!-- Load Facebook SDK for JavaScript -->
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+
+<script>
+document.getElementById('shareBtn').onclick = function() {
+  FB.ui({
+        method: 'share',
+        display: 'popup',
+        message: 'auto.... url' + window.location.href, 
+        href: window.location.href,
+    }, function(response){});
+}
+</script>
 
 
-        <div class="fb-comments" data-href="http://buzzmusiqtaste.us-west-2.elasticbeanstalk.com/result/16" data-width="100%" data-numposts="10"></div>
+  <div class="fb-comments" data-href="https://uher.github.io/" data-width="100%" data-numposts="5"></div>
 
-      </div>
+  <script>
+    (function() {
+      console.log('this is run...');
 
-
-      <div id='loader' class="loader" hidden>
-             <svg viewBox="0 0 32 32" width="32" height="32">
-               <circle id="spinner" cx="16" cy="16" r="14" fill="none"></circle>
-             </svg>
-          </div>
-
-      </main>
-
-    <script>
-      //Integrated Facebook SDK
- 
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '1487753808219605',
-      xfbml      : true,
-      version    : 'v2.6'
-    });
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-   </script>
-
-    <!-- player -->
-        <!--<div id="player" hidden>
-
-          <H3 margineheight="">
-            We'd like to recommend the below tracks for you.
-          </H3>
-
-          <iframe src="https://embed.spotify.com/?uri=spotify%3Auser%3Aqlmhuge%3Aplaylist%3A6Df19VKaShrdWrAnHinwVO" id="myIframe" width="400"
-            height="380" align="middle" frameborder="0" allowtransparency="true"></iframe>
-        </div>-->
-
-
-        <!-- result view -->
-        <div id="result" style="text-align:center" hidden>
-
-          <h1>    </h1>
-
-          <table id='resultTable' class='resultTable'>
-          </table>
-        </div>
-
-
-        <script src="../result.js"></script>
-      </div>
-
-  </body>
-
-  </html>
+      if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+        $('#fbm-m').hidden = false;
+        $('#fbm-d').hidden = true;
+      } else {
+        $('#fbm-m').hidden = true;
+        $('#fbm-d').hidden = false;
+      }
+    })
+    </script>
+</body>
+</html>
