@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Push Notification codelab</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta http-equiv="X-Frame-Options" content="allow">
+
+
+
+<link rel="canonical" href="http://buzzmusiqtaste.us-west-2.elasticbeanstalk.com/"/>
+    <meta property="fb:app_id" content="1487753808219605">
+
+    <meta property="article:author" content="['BuzzMusiq-1041188772583316', 'andy.her.71']">
+    <meta property="article:publisher" content="http://www.buzzmusiq.com/">
+    <meta property="fb:app_id" content="1487753808219605">
+
+
+
+
+<meta property="og:url" content="https://uher.github.io/share/harrison.html"> 
+
+  <meta property="og:site_name" content="Buzzmusiq">
+    <meta property="og:description" content="What type of person are you? Let me guess from what you listen to.">
+    <meta property="og:title" content="Gukhyeon Gyeong wants to smoke with you.">
+    <meta property="og:image" content="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/thumb12.png">
+    <meta property="og:image:width" content="250">
+    <meta property="og:image:height" content="250">
+
+    <meta property="og:type" content="video">
+    
+    <meta property="og:video:url" content="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/image12_486x255.swf">
+    <meta property="og:video:secure_url" content="https://s3-us-west-2.amazonaws.com/buzzmusiqtaste/res/result/image12_486x255.swf">
+    <meta property="og:video:type" content="application/x-shockwave-flash">
+    <meta property="og:video:width" content="486">
+    <meta property="og:video:height" content="255">
+
+
+
+<link rel="manifest" href="manifest.json">
+</head>
+
+<body>
+  
+
+  <script>
+
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '1487753808219605',
+        xfbml      : true,
+        version    : 'v2.6'
+      });
+
+    };
+
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) { return; }
+       js = d.createElement(s); js.id = id;
+       js.src = "//connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+  </script>
+
+<script>
+    (function() {
+      console.log('this is run...');
+
+      if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+        $('#fbm-m').hidden = false;
+        $('#fbm-d').hidden = true;
+      } else {
+        $('#fbm-m').hidden = true;
+        $('#fbm-d').hidden = false;
+      }
+    })
+    </script>
+
+
+  <h1>Share Test</h1>
+  
+  <div class="container">    
+    <div class="fb-share-button"  data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Share</a></div>
+ 
+  </div>
+    
+    <div id="shareBtn" class="btn btn-success clearfix">Share</div>
+
+  <!-- Load Facebook SDK for JavaScript -->
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+
+<script>
+document.getElementById('shareBtn').onclick = function() {
+  FB.ui({
+    method: 'share',
+  }, function(response){});
+}
+</script>
+
+
+  <div class="fb-comments" data-href="https://uher.github.io/" data-width="100%" data-numposts="5"></div>
+
+  <script>
+    (function() {
+      console.log('this is run...');
+
+      if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+        $('#fbm-m').hidden = false;
+        $('#fbm-d').hidden = true;
+      } else {
+        $('#fbm-m').hidden = true;
+        $('#fbm-d').hidden = false;
+      }
+    })
+    </script>
+</body>
+</html>
