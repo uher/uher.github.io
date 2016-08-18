@@ -172,3 +172,8 @@ modal {
 	float: left;
     opacity:0.2;
 }
+
+.img-flow {
+    width: 200px;
+    height: 100px;
+}
