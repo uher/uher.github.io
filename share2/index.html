@@ -177,13 +177,17 @@
 	}(document, 'script', 'facebook-jssdk'));</script>
 
 <script>
+  var g_response;
 document.getElementById('shareBtn').onclick = function() {
   FB.ui({
         method: 'share',
         display: 'popup',
         message: 'auto.... url' + window.location.href, 
         href: window.location.href,
-    }, function(response){});
+    }, function(response){
+      g_response = response;
+      console.log('fb rep: ' + response);
+    });
 }
 </script>
 
