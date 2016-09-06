@@ -5,9 +5,9 @@ var g_jsonObj;
 var VIEW_SIZE = 1500;
 var SCALE = VIEW_SIZE/5;
 var RADIUS = 4;
-var TEST = true;
+// var TEST = true;
 var TEST = false;
-;
+
 
 var g_svgContainer;
 var g_currentTrack;
@@ -74,12 +74,10 @@ function playMusic(id, me) {
         
         currentPlayingId = id;
             
-        if (g_play_mode == PLAY_MODE.WEB) {
+        if (g_play_mode == PLAY_MODE.WEB && previewurl ) {
 
-            if (previewurl) {
-                spotifyPlayer.src = previewurl;
-                spotifyPlayer.play();
-                }
+            spotifyPlayer.src = previewurl;
+            spotifyPlayer.play();
 
         } else {
             // play on spotify
