@@ -44,21 +44,6 @@ function getTrackInfo(id) {
     return g_currentTrack;
 }
 
-function getpreviewurl(id) {
-    
-    var http_request = new XMLHttpRequest();
-    var url = 'https://api.spotify.com/v1/tracks/' + id;
-    http_request.open("GET", url, false);
-    http_request.send(null);
-    g_currentTrack = JSON.parse(http_request.responseText);
-    
-    if ('preview_url' in g_currentTrack) {
-        var previewurl = g_currentTrack['preview_url'];
-        return previewurl;
-    }
-    return null;
-}
-
 function playMusic(id, me) {
 
     console.log('playMusic()!!')
@@ -98,9 +83,9 @@ function playMusic(id, me) {
 
         } else {
             // play on spotify
-            var win = window.open(url, '_blank');
             var url = "https://open.spotify.com/track/"  + id;
-            win.focus();
+            var win = window.open(url, '_blank');
+            win.focus(url);
             spotifyPlayer.pause();       
         } 
         
