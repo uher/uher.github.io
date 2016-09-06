@@ -66,9 +66,9 @@ input:checked + .slider:before {
   width: 400px;
   height: 100px;
   opacity: 0.7;
-  pointer-events: none;
+  /*pointer-events: none;*/
   will-change: opacity;
   -webkit-transition: opacity 0.333s cubic-bezier(0, 0, 0.21, 1);
   transition: opacity 0.333s cubic-bezier(0, 0, 0.21, 1); 
-  z-index: 110
+  z-index: 10
   }
