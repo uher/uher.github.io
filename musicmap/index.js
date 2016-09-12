@@ -23,6 +23,7 @@ var COLOR_NONE = "#757575";
 var g_play_mode = PLAY_MODE.WEB;
 
 var currentPlayingId = '';
+var currentData = ''
 var nowpending = '';
 var spotifyPlayer = '';
 var textTitle= '';
@@ -44,7 +45,7 @@ function getTrackInfo(id) {
     return g_currentTrack;
 }
 
-function playMusic(id, me) {
+function playMusic(data, me) {
 
     console.log('playMusic()!!')
 
@@ -52,7 +53,7 @@ function playMusic(id, me) {
 
     
 
-    if (id == currentPlayingId) {
+    if (data.id == currentPlayingId) {
         console.log('play music');
         // pause
         spotifyPlayer.pause();
@@ -60,20 +61,32 @@ function playMusic(id, me) {
     } else {
         // play
 
-        var trackInfo = getTrackInfo(id);
-        var previewurl;
+        // var trackInfo = getTrackInfo(data.id);
+        var previewurl = null;
 
-        if ('preview_url' in trackInfo) {
-            previewurl = trackInfo['preview_url'];
+        if ('preview_url' in data) {
+            previewurl = data['preview_url'];
         } else {
-            previewurl = null;
+
+            console.log('find preview in apple');
+            if ('apple_info' in data) {
+                if ('previewUrl' in data['apple_info']) {
+                    previewurl = data['apple_info']['previewUrl'];
+                    console.log('finded preview in apple!!!');
+                } else {
+                    console.log('No preview Url in Apple Info');
+                }
+            } else {
+                console.log('No apple info');      
+            }
         }
 
         console.log('previewurl : ' + previewurl);
 
         
-        currentPlayingId = id;
-            
+        currentPlayingId = data.id;
+        currentData = data;
+        
         if (g_play_mode == PLAY_MODE.WEB && previewurl ) {
 
             spotifyPlayer.src = previewurl;
@@ -81,13 +94,13 @@ function playMusic(id, me) {
 
         } else {
             // play on spotify
-            var url = "https://open.spotify.com/track/"  + id;
+            var url = "https://open.spotify.com/track/"  + data.id;
             var win = window.open(url, '_blank');
             win.focus(url);
             spotifyPlayer.pause();       
         } 
         
-        textTitle.textContent = 'Artist:' + g_currentTrack['artists'][0].name + ', Title: '  + g_currentTrack.name
+        textTitle.innerHTML = makeDescription(data);
 
     }
 }
@@ -95,8 +108,8 @@ function playMusic(id, me) {
 
 var g_currentCircle = '';
 function onClickedItem(data, me) {
-    console.log('clicked!! : ' + data.id);
-    playMusic(data.id, me);
+
+    playMusic(data, me);
 
     if (g_currentCircle != '') {
         g_currentCircle.style.fill = COLOR_NONE;
@@ -120,7 +133,93 @@ function onClickedSwitch(me) {
     me.textContent = g_play_mode.text;
 }
 
+g_genres = ''
+index = 0
+function makeDescription(data) {
+    // title
+    // artists
+    // spotify genre
+    // apple genre
+    // gracenote genre
+    // gracenote mood
+
+    description = "Title  : " + data.name + "\n";
+
+    description += "Artist : "
+
+    artists = data['artists'];
+
+    for (i = 0 ; i < artists.length ; i++) {
+
+        description += artists[i].name;
+
+        if (i != artists.length - 1) {
+            description += " : "
+        }
+    }
+
+    description += '<br/>'
+    description += "Spotify Genre : ";
+
+    if ('genres' in data) {
+        genres = data['genres'];
+        g_genres = genres;
+        for (i = 0 ; i < genres.length ; i++) {
+            description += genres[i] + ", ";
+            console.log('spotify genre: ' + genres[i])
+        }
+    }
+
+    description += '<br/>'
+    description += "Apple Genre : ";
+
+    if ('apple_info' in data) {
+        description += data.apple_info.primaryGenreName;
+    }
+
+    description += '<br/>'
+    description += "Gracenote Genre : "
+
+
+    if ('gracenote_info' in data) {
+
+        if ('genre' in data['gracenote_info']) {
+            
+            genres = data.gracenote_info.genre;
+            for (i = 0; i < genres.length; i++) {
+                description += genres[i].TEXT;
+
+                if (i != genres.length - 1) {
+                    description += " : "
+                }
+            }
+        }
+    }
+    
+    description += "<br/>"
+    description += "Gracenote Mood : "
+
+    if ('gracenote_info' in data) {
+
+        if ('mood' in data['gracenote_info']) {
+            
+            moods = data['gracenote_info']['mood']
+            for (i = 0; i < moods.length; i++) {
+                description += data.gracenote_info[i].TEXT;
+
+                if (i != data.gracenote_info.length -1) {
+                    description += " : "
+                }
+            }
+        }
+    }
+
+    return description;
+}
+
+
 function draw(data) {
+    console.log('start draw');
     g_jsonObj = data;
 
     if (TEST) {
@@ -132,10 +231,26 @@ function draw(data) {
                 .attr('width', VIEW_SIZE)
                 .attr('height', VIEW_SIZE)
     
+
+    var tooltip = d3.select("body")
+    .append("div")
+    .style("position", "absolute")
+    .style("z-index", "10")
+    .style("visibility", "hidden")
+    .style("background", "#4DB6AC")
+    .style("margin", "5px")
+    .html(" ");
+
+
     var circles = g_svgContainer.selectAll('circle')
             .data(g_jsonObj)
             .enter()
-            .append('circle');
+            .append('circle').on("mouseover", function(d){tooltip.html(makeDescription(d)); return tooltip.style("visibility", "visible");})
+      .on("mousemove", function(){return tooltip.style("top", (d3.event.pageY-10)+"px").style("left",(d3.event.pageX+10)+"px");})
+      .on("mouseout", function(){return tooltip.style("visibility", "hidden");});
+    
+    
+    // circles.append('svg:title').text(function (d) { return d.})
 
     var circleAttributes = circles
                             .attr('cx', function (d) { return parseFloat(d.x) * SCALE + VIEW_SIZE / 2;} )
@@ -144,6 +259,9 @@ function draw(data) {
                             // .attr('onclick', function (d) { onClickedItem(d); })
                             .on('click', function (d) {return onClickedItem(d, this);})
                             .style('fill', function (d) { return COLOR_NONE})
+                            .style("stroke", "yellow")
+                            .style("stroke-width", "0.5px");
+
     
 }
 
