@@ -24,7 +24,7 @@ def run():
 	# extractRawFile(FILENAME_LEARNING_RAW, FILENAME_LEARNING)
 
 	# - track data part
-	# extractTrackRaw(FILENAME_TRACK_RAW, FILENAME_TRACK_SUMMARY)
+	extractTrackRaw(FILENAME_TRACK_RAW, FILENAME_TRACK_SUMMARY)
 	# sliceJsonItem(FILENAME_TRACK_SUMMARY, FILENAME_TRACK_SUMMARY_SLICE)
 
 	# - merge
@@ -114,11 +114,13 @@ def extractTrackRaw(filename_raw, filename_summary):
 		if 'gracenote_info' in i_data:
 			o_data['gracenote_info'] = {}
 
-			if 'mood' in i_data['gracenote_info']:
-				o_data['gracenote_info'] = i_data['gracenote_info']['mood']
-			
-			o_data['gracenote_info'] = i_data['gracenote_info']['genre']
+			if 'genre' in i_data['gracenote_info']:
+				o_data['gracenote_info']['genre'] = i_data['gracenote_info']['genre']
 		
+			if 'mood' in i_data['gracenote_info']:
+				o_data['gracenote_info']['mood'] = i_data['gracenote_info']['mood']
+		
+			
 		output_datas.append(o_data)
 		
 		i = i + 1
