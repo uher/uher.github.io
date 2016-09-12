@@ -64,17 +64,25 @@ function playMusic(data, me) {
         // var trackInfo = getTrackInfo(data.id);
         var previewurl = null;
 
-        if ('preview_url' in data) {
+        if (data['preview_url'] != null) {
             previewurl = data['preview_url'];
+            console.log('spotify preview url null');
+
         } else {
 
             console.log('find preview in apple');
+
             if ('apple_info' in data) {
-                if ('previewUrl' in data['apple_info']) {
-                    previewurl = data['apple_info']['previewUrl'];
-                    console.log('finded preview in apple!!!');
-                } else {
-                    console.log('No preview Url in Apple Info');
+
+                try {
+                    if ('previewUrl' in data['apple_info']) {
+                        previewurl = data['apple_info']['previewUrl'];
+                        console.log('finded preview in apple!!!');
+                    } else {
+                        console.log('No preview Url in Apple Info');
+                    }
+                } catch (e) {
+                    console.log("error" + e);
                 }
             } else {
                 console.log('No apple info');      
