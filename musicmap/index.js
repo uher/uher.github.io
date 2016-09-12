@@ -162,7 +162,7 @@ function makeDescription(data) {
         description += artists[i].name;
 
         if (i != artists.length - 1) {
-            description += " : "
+            description += ", "
         }
     }
 
@@ -172,6 +172,8 @@ function makeDescription(data) {
     if ('genres' in data) {
         genres = data['genres'];
         g_genres = genres;
+
+        console.log('spotify genre length : ' + genres.length)
         for (i = 0 ; i < genres.length ; i++) {
             description += genres[i] + ", ";
             console.log('spotify genre: ' + genres[i])
@@ -193,12 +195,15 @@ function makeDescription(data) {
 
         if ('genre' in data['gracenote_info']) {
             
+            // this is object.
             genres = data.gracenote_info.genre;
-            for (i = 0; i < genres.length; i++) {
-                description += genres[i].TEXT;
 
-                if (i != genres.length - 1) {
-                    description += " : "
+            keys = Object.keys(genres)
+
+            for (i = 0; i < keys.length; i++) {
+                description += genres[keys[i]].TEXT;
+                if (i != keys.length - 1) {
+                    description += ", "
                 }
             }
         }
@@ -208,15 +213,18 @@ function makeDescription(data) {
     description += "Gracenote Mood : "
 
     if ('gracenote_info' in data) {
-
         if ('mood' in data['gracenote_info']) {
-            
-            moods = data['gracenote_info']['mood']
-            for (i = 0; i < moods.length; i++) {
-                description += data.gracenote_info[i].TEXT;
+
+            moods = data['gracenote_info']['mood'];
+            keys =  Object.keys(moods);
+
+
+
+            for (i = 0; i < keys.length; i++) {
+                description += moods[keys[i]].TEXT;
 
                 if (i != data.gracenote_info.length -1) {
-                    description += " : "
+                    description += ", "
                 }
             }
         }
