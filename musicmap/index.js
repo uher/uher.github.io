@@ -254,7 +254,7 @@ function draw(data) {
     .style("z-index", "10")
     .style("visibility", "hidden")
     .style("background", "#4DB6AC")
-    .style("margin", "5px")
+    .style("padding", "5px")
     .html(" ");
 
 
