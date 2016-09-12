@@ -31,7 +31,7 @@ function init() {
     console.log('init!!!');
     spotifyPlayer = document.getElementById('spotifyplayer');
     textTitle = document.getElementById('text-title');
-    d3.json('output.txt', draw);
+    d3.json('map.json', draw);
 }
 
 function getTrackInfo(id) {
