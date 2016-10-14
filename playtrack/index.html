@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="manifest" href="manifest.json">
+</head>
+
+<body>
+<audio controls="controls" id=player></audio>
+<br>
+<input id="input" type="text" value="69akWjz6x5bOVPa907Y6HX"><br>
+<button id="btn-play" class="default-button" onclick="clickPlay()">
+  Play
+</button>
+<br>
+<p id='title'>title
+</p>
+<br>
+<p id='artist'>artist
+</p>
+<script>
+
+function clickPlay() {
+
+    trackId = document.getElementById('input').value;
+    trackInfo = getTrackInfo(trackId);
+    playTrack(trackInfo);
+    
+    // if need
+    updateUI(trackInfo);
+}
+
+function playTrack(trackInfo) {
+
+    player = document.getElementById('player');
+    previewUrl = trackInfo['preview_url'];
+
+    player.pause();
+
+    console.log('previewUrl: ' + previewUrl);
+    if (previewUrl != null) {
+        // play track on web
+        player.src = previewUrl;
+        player.play();
+
+    } else {
+        // play track with spotify
+        var url = "https://open.spotify.com/track/"  + trackInfo.id;
+        var win = window.open(url, '_blank');
+        win.focus(url);
+    }
+}
+
+function getTrackInfo(id) {
+    var http_request = new XMLHttpRequest();
+    var url = 'https://api.spotify.com/v1/tracks/' + id;
+    http_request.open("GET", url, false);
+    http_request.send(null);
+    g_currentTrack = JSON.parse(http_request.responseText);
+    
+    return g_currentTrack;
+}
+
+function updateUI(trackInfo) {
+   textTitle = document.getElementById('title');
+   textArtist = document.getElementById('artist');
+
+   // get title
+   textTitle.innerText = trackInfo.name;
+   
+   // get artist
+   text = '';
+   artists = trackInfo['artists'];
+   
+    for (i = 0 ; i < artists.length ; i++) {
+
+        text += artists[i].name;
+
+        if (i != artists.length - 1) {
+            text += ", "
+        }
+    }
+
+    textArtist.innerText = text;
+}
+
+</script>
+</body>
+</html>
