@@ -13,7 +13,8 @@ h1 {
 
 #container {
     margin: 0 auto;
-    width: 50%;  /* Ancho del contenedor */
+    width: 95%;  /* Ancho del contenedor */
+	height: 100%;
 }
 
 #container input {
@@ -57,7 +58,7 @@ h1 {
 #content {
 	background: #f1f1f1;  /* Fondo del contenido */
 	border-radius: 0 .25em .25em .25em;
-	min-height: 20em;  /* Alto del contenido */
+	min-height: 300em;  /* Alto del contenido */
 	position: relative;
 	width: 100%;
 	z-index: 5;
