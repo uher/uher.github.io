@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="manifest" href="manifest.json">
+</head>
+
+
+
+
+<style>
+textarea {
+    height: 300px;
+    width: 100%;
+}
+</style>
+<body>
+
+
+<audio controls="controls" id=player></audio>
+<br>
+<input id="input" type="text" value="69akWjz6x5bOVPa907Y6HX"><br>
+<button id="btn-play" class="default-button" onclick="clickPlay()">
+  Play
+</button>
+<br>
+<p id='title'>title
+</p>
+<br>
+<p id='artist'>artist
+</p>
+<br>
+<p id='release_date'>release_date
+</p>
+
+
+<br>
+
+<textarea id="tracks" onSelect="trackIDSelected()">0 0uTVChzibEWKrXojPaJ9y1 31wGncgYPc7WsxBwtcdGGE 0mQYdLzSu6k6nYy5Rb12Pd 0JlfdsFD0LLTR1veCgZAv6 4xpxl3jFapVtMFWLsi42LF
+1 2PMLJdyoAgrxyRzEOaRpdY 6A7eM5r5Yt8XyZE67CGhAt 0sbMTsmPQQK9NqYpazIaZW 4J8NvtMz5qyrSGUtfFsKEY 15z97NWlUTAJfJfwgs8Qnq
+2 1x2xQTH9ibApB4ndLwq6FN 5yRQpqzkKRYozrMsmU70ww 76BWRxjtRHUuWY1mJUrcC9 4G8wt3fUBpgBjI35TBF2eQ 1cTmlIavpTMpGewqlvddOI
+3 5sNBGuuhLjqNlEeB10YFfu 7EZPH9Px3gXlxD5KJDwtwc 3ZfACixzMNAbRcpGwEkLRe 0LFcFGLYTX6UmeIdO7NVd7 5PR09nMAHAOOklMQMJchch
+4 0WD900RjyjBcxtGu3baTAb 3aKYOA44zbBRWJ8FqzwAt9 6sVQNUvcVFTXvlk3ec0ngd 39U2HwXvaxd42LS8uiS1qI 5MjPN1pIFQ8VxestEYyUsB
+5 2DCp2wBoQCFavSdK7iOeDp 2qAghZFHXj2iLIrkW5npUm 6MLycvbQNnctHqaL5qEVZs 09troLDY24o6BTzEtLrVdt 6WJAZ2TUnaKUv9aKkOGokD
+6 6zpPyMFnLMO5xcSVmvm0FP 0XU6h6Pb3slkLpZhiSYR2F 7svZRLGoDNcOmsJDpwtY3Q 67hYTvOyYTOwXvq0zUdkXc 6nhhM2qEUbI7EAnVxSoRiC
+7 2kdzuAISSkMGZn9i9Bygdb 7HBWyFygBKz1YSUhmll3Gr 17Qj1HcrBR00pmTvrs7vDW 4nJyPNfR3U5ARu6ZIAQrY4 1Yx2hLDlw3q0j1zzamKjSd
+8 5DN1QdgodyvoM4efdXUR1c 5QS9GYw1lZtIIlfnCqNvgX 3ZKI571IyBKZPHq1UiQ2Sw 3Bw1o5oBYuReDLHS4KF5sU 191w0Z04ktB8QjlRLSqmNq
+9 1mfpMeu7T24C7Q2jZLCnXi 1Ca2ELRlvACAeI7xz9c9jR 66RDFLgencoPZBXUr5v84m 6yTkllVlMl9R5qnk5HhOWx 7Jt9vENls2TLtSU5taFQgT
+10 5fRTUCS48zwiGai2Ku8gSg 4rcHWl68ai6KvpXlc8vbnE 6gajgS7FEmFEiK8NSkhQKn 72FZ1Qzauw8XpJs8dz4CrH 29wJiSQcze8HEmxkUQykyp
+11 2ebOejQEo72cC3JwfeLmfJ 3o8sYnh4sDkB3Lt3aEytyl 6LtcpZ71tEHTsnR4GEHsSR 2JH7eG9TBA8lhIBeIQam7d 6nfxhYm1k0OodleIJfTepK
+12 5ojsyTb9sJRiDuicRJ4YGR 4aiNCzeJHRjiTkgcBs9kD1 5YAhKEMTGMh6SxTSYcUJl6 3SHPTPPnB3M2e4ZdHq0gOd 1SOSPCtnLZnfcGKyH8MJn0
+13 1qHbtikwjBVM0uIUgqTeja 16zgKRb8XXdYoP6hcdkoDS 6QnpVD7AujNsUdl1swDQI0 1Ki0itGfXGmStQnPxhimY0 0llKAr43rUNYN3f11XesBm
+14 7Ej5vIg5IIX5WpEMvnAA0R 3yS0n9lxP0pGO95sPfo7of 1teudLjpsRZhkHHYx5wQ2G 7tOAN6w4a1LD0iqkRnIrhZ 170JhN0I7D7LFekcGSJFOC
+15 00cioPPTRj17FTWdfoMDKk 0uoOmIZIH6hMycMYRYrR6p 5ccQyxHGUWvKmj9EpMhiNx 70B7PVFjuEb7S0jRge8RpS 3yrMeMwTE6H5L7Hrv6UNsM
+16 7M9ozplFfutesn7OU6Ob0j 0MnrpvXOd71v0fqosubq9o 0kdli9bGgWufvIgeKtmtF5 5DZ9f7495bSXFLdI5PLIQ1 0fmq95GRlHyPUoFV8umX16
+17 6YZKsz62LjcigfBLFQevCh 0fzw4BBD5FRJtPuQbUUKzJ 7fco9ocFesu9I09AMmpWkW 4wZdal5NzPtwKcjLMt7vJj 18z7tK7u9DcDw85LYRR5Fe
+18 23LL15KgZBaf7TEI5Lj6Bz 1t7mwRjljTUogYtHN8lfif 1rOkRbm5A648YeDGfS223L 200TxobHsx4EQhqX4M4pxy 6jkoajdfRi2NIoPobVYrLw
+19 5YBVDvTSSSiqv7KZDeUlXA 1qdssTVAs5221er4aq0Rhd 2zMusKrnnDgjRlsgZaB3py 67hYTvOyYTOwXvq0zUdkXc 6RzPVU70MHep4oS29DppjO
+20 36B1Z11YZF5b0nFEodF3ao 0vhiGS9UsCMq4RF0WgB6gP 34MRi5GRWHFUa731JBxFEl 2XEDvwzY9TymhYPqi2y0GL 4EGduKhpEdXZFsZELRkvfs
+21 4vfzROmNsxedKICcHod5Rh 0wP3e5PzSxafy2TRtlayq9 1Z044RdmytQDD8571vd4fl 6yEKTgineiAvxoARQSevib 6HdM7gzXVgcpepv276raog
+22 3DMp133d6YzilcQw7q1KMG 6sGThqGAop8NfopF9HgalK 0Oc2ZkWPumBjz4CQmfGapD 6DTYwBkGZQxOfqIIeiyEUL 78zWXX0WbaUF7DekfzDE13
+23 0uVyZywUNOp6S0dU5r8TS8 2sNvitW3TxiTeC9xT9f2ZZ 4NN9IyaBZRM08WLVi7P2bw 6a9MKm9Q03tVUjj0AeeqCx 2SIwqSjxMgPEWtAaVDGnas
+24 5l7bHAybUwUyKHvjP1UnUF 1dZHIbmuBDAwXfQOM4dyM3 23aDP04QX8MAHA99FLaPtN 7dMWiyYYkxNC0mz90Ni9L3 3HIO2Ysxx47gnwMGWy7dwB
+25 3wa5sPSMHMsBX8s4RYIA9H 5Xmplqj77ATmZcVdvhtzoo 6DHdlJqjBOZbkdk65B1hKX 6A7eM5r5Yt8XyZE67CGhAt 5Is1Imr0MSJqqw96YDbHfK
+26 1mr3616BzLdhXfJmLmRsO8 386RUes7n1uM1yfzgeUuwp 1BDYGH5smhQL3IKm7f1C90 0KpfYajJVVGgQ32Dby7e9i 2UmIV6L2kavGpZnti5YIrL
+27 73vqnWAPMTOVMadiRsJjOT 5YIFcOL6Ca9OOqAX0USRC2 6uQRICOSfezKrAsCuQT847 3oEWrrWfbZpVNRfr6hDRbM 4vu9ojCV1PgNBQx6T8sYAH
+28 4vELW2hK9eb9R7Q0BNJ3Vh 7l1vukTvPpX20kiJEdMR75 16uBpYr9yKMBHSHldRMF0K 10fEPHLpDSugrkqLlerkKH 2h1htUS8h2oYq63385ZApR
+29 2WQAknZHrJAEQOFXe0F44P 2yhhcHTfvLC0HzSajGYL0h 3pDEtP8fRPi7t7GrDdpmaf 5B4UpK5ajp6bCoiYgArfwB 0jeQjoVfP6pUfeAqJnADTK</textarea>
+
+
+<script>
+
+
+function trackIDSelected() {
+  
+  selection = window.getSelection();
+  trackID = selection.toString()
+  if (trackID.length > 10) {
+    document.getElementById("input").value = trackID;
+    clickPlay();
+  }
+}
+
+
+function clickPlay() {
+
+    trackId = document.getElementById('input').value;
+    trackInfo = getTrackInfo(trackId);
+    playTrack(trackInfo);
+    
+    // if need
+    updateUI(trackInfo);
+}
+
+function playTrack(trackInfo) {
+
+    player = document.getElementById('player');
+    previewUrl = trackInfo['preview_url'];
+
+    player.pause();
+
+    console.log('previewUrl: ' + previewUrl);
+    if (previewUrl != null) {
+        // play track on web
+        player.src = previewUrl;
+        player.play();
+
+    } else {
+        // play track with spotify
+        var url = "https://open.spotify.com/track/"  + trackInfo.id;
+        var win = window.open(url, '_blank');
+        win.focus(url);
+    }
+}
+
+function getTrackInfo(id) {
+    var http_request = new XMLHttpRequest();
+    var url = 'https://api.spotify.com/v1/tracks/' + id;
+    http_request.open("GET", url, false);
+    http_request.send(null);
+    g_currentTrack = JSON.parse(http_request.responseText);
+    
+    return g_currentTrack;
+}
+
+function getAlbumInfo(id) {
+    var http_request = new XMLHttpRequest();
+    var url = 'https://api.spotify.com/v1/albums/' + id;
+    http_request.open("GET", url, false);
+    http_request.send(null);
+    albumInfo = JSON.parse(http_request.responseText);
+    
+    return albumInfo;
+}
+
+
+function updateUI(trackInfo) {
+   textTitle = document.getElementById('title');
+   textArtist = document.getElementById('artist');
+   releaseDate = document.getElementById('release_date');
+
+   albumID = trackInfo['album']['id']
+   album = getAlbumInfo(albumID)
+   console.log(album)
+   releaseDate.innerText = album['release_date'];
+
+
+   // get title
+   textTitle.innerText = trackInfo.name;
+   
+   // get artist
+   text = '';
+   artists = trackInfo['artists'];
+   
+    for (i = 0 ; i < artists.length ; i++) {
+
+        text += artists[i].name;
+
+        if (i != artists.length - 1) {
+            text += ", "
+        }
+    }
+
+    textArtist.innerText = text;
+}
+
+</script>
+</body>
+</html>
