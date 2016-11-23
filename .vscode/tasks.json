@@ -5,6 +5,7 @@
     "command": "python",
     "isShellCommand": true,
     // "args": ["IllusrationDataExtract/extract.py"],
-    "args": ["musicmap/dataExtractor.py"],
+    "args": ["${file}"],
+    
     "showOutput": "always"
 }
