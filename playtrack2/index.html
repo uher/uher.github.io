@@ -8,6 +8,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="manifest" href="manifest.json">
+
+  <script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+
 </head>
 
 
@@ -76,6 +82,35 @@ textarea {
 <script>
 
 
+  function postData(input) {
+    $.ajax({
+        type: "POST",
+        crossDomain: true,
+        url: "./hello.py",
+        data: { param: input },
+        success: callbackFunc
+    });
+}
+
+
+function callbackFunc(response) {
+    textTitle = document.getElementById('title');
+    textTitle.innerText = response
+}
+
+function test2(input) {
+    $.ajax({
+      type: "POST",
+      url: "./hello.py",
+      data: { param: input}
+    }).done(function( o ) {
+      console.log(o)
+    });
+}
+
+
+
+
 function trackIDSelected() {
   
   selection = window.getSelection();
@@ -89,6 +124,10 @@ function trackIDSelected() {
 
 function clickPlay() {
 
+  postData("xxx");
+  //test2("aaa");
+
+  return;
     trackId = document.getElementById('input').value;
     trackInfo = getTrackInfo(trackId);
     playTrack(trackInfo);
@@ -139,6 +178,11 @@ function getAlbumInfo(id) {
 }
 
 
+
+
+
+
+
 function updateUI(trackInfo) {
    textTitle = document.getElementById('title');
    textArtist = document.getElementById('artist');
@@ -167,6 +211,9 @@ function updateUI(trackInfo) {
     }
 
     textArtist.innerText = text;
+
+
+    test2("aaa");
 }
 
 </script>
