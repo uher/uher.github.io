@@ -84,7 +84,7 @@ textarea {
 
   function postData(input) {
     $.ajax({
-        type: "POST",
+        type: "GET",
         crossDomain: true,
         url: "./hello.py",
         data: { param: input },
