@@ -96,8 +96,8 @@ function sendFeedback(feedback, trackId) {
 
             console.log("response: " + response);
 
-            // g_trackId = response;
-            // playTrack(g_trackId);
+            // auto play
+            onClickedGetTrack();
 
         },
         error: function (response) {
@@ -106,24 +106,7 @@ function sendFeedback(feedback, trackId) {
     }).done(function (data) {
         console.log('getTrack complented');
     });
-    
-    // $.ajax({
-    //     url: window.location.origin + "/track/" + feedback + "/" trackId,
-    //     type: 'GET',
-    //     success: function (response) {
 
-    //         console.log("response: " + response);
-
-    //         // g_trackId = response;
-    //         // playTrack(g_trackId);
-
-    //     },
-    //     error: function (response) {
-    //         console.log('error in GET track');
-    //     },
-    // }).done(function (data) {
-    //     console.log('getTrack complented');
-    // });
 }
 
 function onClickedGetTrack() {
