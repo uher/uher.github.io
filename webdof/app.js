@@ -121,22 +121,3 @@ function sendFeedback(trackId, feedback, callback) {
 app.listen(port, function () {
   console.log('App listening on port: ' + port);
 })
-
-
-// test area
-
-app.get('/topic', function(req, res) {
-var topics = [
-    'Java',
-    'Node',
-    'express',
-]
-    var as = `
-    <a href="/topic?id=0">JavasScript</a><br>
-    <a href="/topic?id=1">Nodejs</a><br>
-    <a href="/topic?id=2">Express</a><br>
-    ${topics[req.query.id]}
-    `
-
-    res.send(as)
-});
