@@ -9,7 +9,10 @@ class BMEngine:
     def getTrack(self):
         trackId = '0uTVChzibEWKrXojPaJ9y1'
         return trackId
-    
+
+    def neutralTrack(self, trackId):
+        print('neutral track: ' + trackId)
+        return 'processed neutral : ' + trackId
     
     # TODO: keunwoo
     def likeTrack(self, trackId):
@@ -34,8 +37,12 @@ class BMEngine:
         elif feedback == "dislike":
         #dislike
             message = "succeed dislike"
-            self.likeTrack(trackId)
-            
+            self.disLikeTrack(trackId)
+        
+        elif feedback == "neutral":
+            message = "succeed neutral"
+            self.neutralTrack(trackId)
+
         else:
             message = "feedback string error. should use 'like' or 'dislike'"
 

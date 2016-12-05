@@ -127,7 +127,7 @@ function onClickedGetTrack() {
             console.log('error in GET track');
         },
     }).done(function (data) {
-        console.log('getTrack complented');
+        console.log('getTrack completed');
     });
 }
 
@@ -141,10 +141,16 @@ function onClickedDislike() {
     sendFeedback("dislike", g_trackId);
 }
 
+function onClickedNeutral() {
+    console.log("onClickedNeutral start");
+    sendFeedback("neutral", g_trackId);
+}
+
 function addClickListener() {
     d.getElementById('btn-gettrack').addEventListener('click', onClickedGetTrack);
     d.getElementById('btn-like').addEventListener('click', onClickedLike);
     d.getElementById('btn-dislike').addEventListener('click', onClickedDislike);
+    d.getElementById('btn-neutral').addEventListener('click', onClickedNeutral);
 }
 
 // App start.
