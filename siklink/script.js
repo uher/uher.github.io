@@ -76,10 +76,22 @@ function main() {
    var params = {};
    var hashString;
    
+   var div = document.createElement('div');
+    div.innerHTML = "<h1>hash string: " + hash +"</h1>";
+    document.body.appendChild(div.childNodes);
+
    if (hash.length > 1) {
        
        var hashString = hash.substring(1); 
-       g_params = getHashParams(hashString);  
+       g_params = getHashParams(hashString);
+
+
+
+       var div = document.createElement('div');
+    div.innerHTML = "<h1>g_params string: " + g_params +"</h1>";
+    document.body.appendChild(div.childNodes);
+
+
        params = g_params;
    } else {
        state = 'init';
@@ -100,11 +112,6 @@ function main() {
     var div = document.createElement('div');
     div.innerHTML = iframe;
     var elements = div.childNodes;
-
-
-//    var iframe = document.createElement('iframe');
-//     iframe.style.display = "none";
-//     iframe.src = /* your URL here */;
     document.body.appendChild(div);
     // 1 query string...
 
