@@ -7,6 +7,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+
+  <script src="library/jquery-2.2.1.min.js"></script>
+  <script src="library/lodash.min.js"></script>
         <!--<meta http-equiv="refresh" content="1; url=sik://play/playlist?playlistid=5O2ERf8kAYARVVdfCKZ9G7&amp;ownerid=spotify">
         <script type="text/javascript">
             window.location.href = "sik://play/playlist?playlistid=5O2ERf8kAYARVVdfCKZ9G7&amp;ownerid=spotify"
@@ -29,32 +32,15 @@
 
 
     <script>
-    window.location.replace("sik://play/playlist?playlistid=5O2ERf8kAYARVVdfCKZ9G7&amp;ownerid=spotify");
-    setTimeout(function () {
-  window.location.replace("https://itunes.apple.com/app/id12345678");
-}, 2000);
+//     window.location.replace("sik://play/playlist?playlistid=5O2ERf8kAYARVVdfCKZ9G7&amp;ownerid=spotify");
+//     setTimeout(function () {
+//   window.location.replace("https://itunes.apple.com/app/id12345678");
+// }, 2000);
 </script>
 
 
 
-<!--<script>
-
-
-      (function ($, MobileEsp) {
-        // On document ready, redirect to the App on the App store.
-        $(function () {
-          if (typeof MobileEsp.DetectIos !== 'undefined' && MobileEsp.DetectIos()) {
-            // Add an iframe to twitter://, and then an iframe for the app store
-            // link. If the first fails to redirect to the Twitter app, the
-            // second will redirect to the app on the App Store. We use jQuery
-            // to add this after the document is fully loaded, so if the user
-            // comes back to the browser, they see the content they expect.
-            $('body').append('<iframe class="twitter-detect" src="twitter://" />')
-              .append('<iframe class="twitter-detect" src="itms-apps://itunes.com/apps/twitter" />');
-          }
-        });
-      })(jQuery, MobileEsp);
-    </script>-->
+  <script src="script.js"></script>
 
 
 </body>
