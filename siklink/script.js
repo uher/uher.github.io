@@ -31,7 +31,7 @@ function getHashParams(hashString) {
 }
 
 
-
+deli = '?';
 
 
 function main() {
