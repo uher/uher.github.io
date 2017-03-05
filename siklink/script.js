@@ -43,9 +43,9 @@ function generateSiklinkUrl(playlistid, ownerid) {
     console.log("generated url : " + url);
 
     
-    // window.location.replace(url);
+    window.location.replace(url);
     //     setTimeout(function () {
-    //   window.location.replace("https://itunes.apple.com/app/id12345678");
+    //   window.location.replace("http://getsik.io/");
 }
 
 
@@ -76,10 +76,10 @@ function main() {
    var params = {};
    var hashString;
    
-   var div = document.createElement('div');
-    div.innerHTML = "<h1>hash string: " + hash +"</h1>";
-    var elements = div.childNodes;
-    document.body.appendChild(div);
+//    var div = document.createElement('div');
+//     div.innerHTML = "<h1>hash string: " + hash +"</h1>";
+//     var elements = div.childNodes;
+//     document.body.appendChild(div);
 
 
    if (hash.length > 1) {
@@ -89,9 +89,9 @@ function main() {
 
 
 
-       var div = document.createElement('div');
-         div.innerHTML = "<h1>g_params string: " + g_params +"</h1>";
-        document.body.appendChild(div);
+    //    var div = document.createElement('div');
+    //      div.innerHTML = "<h1>g_params string: " + g_params +"</h1>";
+    //     document.body.appendChild(div);
 
 
        params = g_params;
