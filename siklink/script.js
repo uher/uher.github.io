@@ -78,7 +78,9 @@ function main() {
    
    var div = document.createElement('div');
     div.innerHTML = "<h1>hash string: " + hash +"</h1>";
-    document.body.appendChild(div.childNodes);
+    var elements = div.childNodes;
+    document.body.appendChild(div);
+
 
    if (hash.length > 1) {
        
@@ -88,8 +90,8 @@ function main() {
 
 
        var div = document.createElement('div');
-    div.innerHTML = "<h1>g_params string: " + g_params +"</h1>";
-    document.body.appendChild(div.childNodes);
+         div.innerHTML = "<h1>g_params string: " + g_params +"</h1>";
+        document.body.appendChild(div);
 
 
        params = g_params;
