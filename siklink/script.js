@@ -19,6 +19,16 @@ function checkUserDevice() {
     return isIPhone;
 }
 
+function generateEmbedPlayer(playlistid, ownerid) {
+
+    var iframe = '<iframe src="https://embed.spotify.com/?uri=spotify%3Auser%3A__OWNERID__%3Aplaylist%3A__PLAYLISTID__&theme=white" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>'
+
+    iframe = iframe.replace("__OWNERID__", ownerid);
+    iframe = iframe.replace("__PLAYLISTID__","playlistid"); 
+
+    return iframe;
+}
+
 
 function getHashParams(hashString) {
     var hashParams = {};
@@ -49,9 +59,7 @@ function main() {
    
    if (hash.length > 1) {
        
-       var splited = hash.substring(1).split(deli); 
-       state = splited[0];
-       hashString = splited[1];
+       var hashString = hash.substring(1); 
        g_params = getHashParams(hashString);  
        params = g_params;
    } else {
@@ -59,9 +67,16 @@ function main() {
    }
 
 
+   var playlistId = params.playlistid;
+   var ownerId = params.ownerid;
 
 
+   var iframe = generateEmbedPlayer(playlistId, ownerId);
 
+//    var iframe = document.createElement('iframe');
+//     iframe.style.display = "none";
+//     iframe.src = /* your URL here */;
+    document.body.appendChild(iframe);
     // 1 query string...
 
     // if ios redirect to sik app
@@ -70,6 +85,7 @@ function main() {
     // else sik hompage load.
     // and embed player update.
 
+    
     
 
     if (checkUserDevice()) {
