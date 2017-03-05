@@ -1,6 +1,8 @@
 console.log("in script.js");
 
 var g_params = '';
+var g_iframe = '';
+
 
 function checkUserDevice() {
 
@@ -73,10 +75,20 @@ function main() {
 
    var iframe = generateEmbedPlayer(playlistId, ownerId);
 
+   console.log("iframe : " + iframe);
+
+   g_iframe = iframe;
+
+
+    var div = document.createElement('div');
+    div.innerHTML = iframe;
+    var elements = div.childNodes;
+
+
 //    var iframe = document.createElement('iframe');
 //     iframe.style.display = "none";
 //     iframe.src = /* your URL here */;
-    document.body.appendChild(iframe);
+    document.body.appendChild(div);
     // 1 query string...
 
     // if ios redirect to sik app
