@@ -23,7 +23,10 @@ function checkUserDevice() {
 
 function generateEmbedPlayer(playlistid, ownerid) {
 
-    var iframe = '<iframe src="https://embed.spotify.com/?uri=spotify:user:__OWNERID__:playlist:__PLAYLISTID__&theme=white" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>'
+
+{/*<iframe src="https://embed.spotify.com/?uri=spotify%3Auser%3Aspotify%3Aplaylist%3A2PXdUld4Ueio2pHcB6sM8j" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>*/}
+
+    var iframe = '<iframe src="https://embed.spotify.com/?uri=spotify:user:__OWNERID__:playlist:__PLAYLISTID__" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>'
 
     iframe = iframe.replace("__OWNERID__", ownerid);
     iframe = iframe.replace("__PLAYLISTID__","playlistid"); 
@@ -35,9 +38,9 @@ function generateEmbedPlayer(playlistid, ownerid) {
 function generateSiklinkUrl(playlistid, ownerid) {
 
     // sik://play/playlist?playlistid=5O2ERf8kAYARVVdfCKZ9G7&amp;ownerid=spotify
-    var url = "sik:sik://play/playlist?playlistid=" + playlistid + "&" + "ownerid=" + ownerid;
+    var url = "sik://play/playlist?playlistid=" + playlistid + "&" + "ownerid=" + ownerid;
 
-    console.log("generated url : " + domain);
+    console.log("generated url : " + url);
 
     
     window.location.replace(url);
