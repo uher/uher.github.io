@@ -29,7 +29,7 @@ function generateEmbedPlayer(playlistid, ownerid) {
     var iframe = '<iframe src="https://embed.spotify.com/?uri=spotify:user:__OWNERID__:playlist:__PLAYLISTID__" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>'
 
     iframe = iframe.replace("__OWNERID__", ownerid);
-    iframe = iframe.replace("__PLAYLISTID__","playlistid"); 
+    iframe = iframe.replace("__PLAYLISTID__",playlistid); 
 
     return iframe;
 }
@@ -43,7 +43,7 @@ function generateSiklinkUrl(playlistid, ownerid) {
     console.log("generated url : " + url);
 
     
-    window.location.replace(url);
+    // window.location.replace(url);
     //     setTimeout(function () {
     //   window.location.replace("https://itunes.apple.com/app/id12345678");
 }
