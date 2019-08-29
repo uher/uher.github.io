@@ -2,6 +2,9 @@
 <html>
 <head>
 
+
+    <!-- python -m SimpleHTTPServer 8000 -->
+
   <title>Push Notification codelab !!!</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,7 +22,18 @@
       console.log("clicked function is called..")
 
       document.getElementById("ls").innerHTML = "Hello World";
-      MobileInterface.test()
+
+      try {
+        MobileInterface.test()
+      } catch (err) {
+          alert(err)
+      }
+
+      try {
+        webkit.messageHandlers.callbackHandler.postMessage("message body")
+      } catch (err) {
+        alert(err)
+      }
 
     }
 
