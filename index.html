@@ -11,18 +11,28 @@
 
   <div id="ls">ss</div>
 
-
-  <button style="height:200px;width:200px" value="this is button" onclick="clickButton">
-  This is Button</button>
-
-
+  
   <script type="text/javascript">
     
     function clickButton() {
+
+      console.log("clicked function is called..")
+
+      document.getElementById("ls").innerHTML = "Hello World";
       MobileInterface.test()
+
     }
 
   </script>
+
+
+
+
+  <button style="height:100px;width:100px" value="this is button" onclick="clickButton()">
+  This is Button</button>
+
+
+  
 </head>
 
 <body>
